@@ -5,6 +5,8 @@
 #ifndef MIPT_HW_SAPMLE_STRING_H
 #define MIPT_HW_SAPMLE_STRING_H
 
+#include <cstdlib>
+#include <iostream>
 
 class String {
 public:
