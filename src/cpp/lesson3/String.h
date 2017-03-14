@@ -1,17 +1,19 @@
 //
-// Created by dmitry on 2/23/17.
+// Created by Artyom on 25.02.2017.
 //
 
-#ifndef MIPT_HW_SAPMLE_STRING_H
-#define MIPT_HW_SAPMLE_STRING_H
+#ifndef STRING_STRING_H
+#define STRING_STRING_H
 
-#include <cstdlib>
 #include <iostream>
 
 class String {
+private:
+    char *values;
+    size_t capacity;
 public:
     //конструктор по умолчанию
-    String();
+    String(size_t capacity = 1);
 
     //конструктор от строки
     String(const char *);
@@ -28,6 +30,8 @@ public:
     //поиск символа в строке
     size_t find(const char);
 
+    void resize(size_t );
+
     //увеличить строку на символ (поменять сам объект)
     String &append(const char);
 
@@ -38,16 +42,16 @@ public:
     String &append(const String &);
 
     //подстрока
-    String &substring(size_t start = 0, size_t finish = -1) const;
+    String substring(size_t start = 0, size_t finish = -1) const;
 
     //конкатинация строк
-    String &operator+(const char &) const;
+    String operator+(const char ) const;
 
     //конкатинация строк
-    String &operator+(const char *) const;
+    String operator+(const char *) const;
 
     //конкатинация строк
-    String &operator+(const String &) const;
+    String operator+(const String &) const;
 
     //Обращение к i-тому элементу строки. Удостовериться, что символ можно поменять str[2]='c'
     char &operator[](const int) const;
@@ -74,5 +78,4 @@ public:
     operator double() const;
 };
 
-
-#endif //MIPT_HW_SAPMLE_STRING_H
+#endif //STRING_STRING_H
